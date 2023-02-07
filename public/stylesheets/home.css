@@ -1,0 +1,22 @@
+body {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.films-container {
+    width: 100%;
+    padding: 0 5vw;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.film {
+    padding: 10px;
+    transition: scale 200ms;
+}
+
+.film:hover {
+    scale: 1.1;
+    cursor: pointer;
+}

@@ -1,3 +1,10 @@
+:root {
+    --clr-base: #272640;
+    --clr-secondary: #3e1f47;
+    --clr-front-bright: #006466;
+    --clr-front-dark: #144552;
+}
+
 *,
 *::before,
 *::after {

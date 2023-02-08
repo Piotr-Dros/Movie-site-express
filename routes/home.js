@@ -21,6 +21,22 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/movie/:id', (req, res) => {
+    const movieId = req.params.id;
+    getFilmById(movieId).then((movieData) => {});
+});
+
+async function getFilmById(id) {
+    const currentMovieUrl = `${apiBaseUrl}/movie/${id}?api_key=${apiKey}`;
+    const response = await fetch(currentMovieUrl, { method: 'GET' }).catch(
+        (error) => {
+            console.log(error);
+        }
+    );
+    const data = await response.json();
+    return data;
+}
+
 async function getCurrentPlayedMovies() {
     const response = await fetch(nowPlayingUrl, { method: 'GET' }).catch(
         (error) => {

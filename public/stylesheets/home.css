@@ -1,22 +1,74 @@
+:root {
+    --image-change-speed: 500ms;
+}
+
 body {
     min-height: 100vh;
     width: 100%;
+
+    background-color: var(--clr-base);
 }
 
 .films-container {
     width: 100%;
-    padding: 0 5vw;
-
+    padding: 0 10vw;
+    margin: 2rem 0;
     display: grid;
+    gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
 }
 
 .film {
-    padding: 10px;
-    transition: scale 200ms;
+    color: white;
+    position: relative;
+    border-radius: 5px;
+    max-width: 200px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: scale var(--image-change-speed);
 }
 
-.film:hover {
-    scale: 1.1;
+.film .film__title {
+    color: white;
+    font-size: 0.8rem;
+
+    margin: 0.7em 0.2em 1.2em;
+
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    opacity: 0;
+
+    transition: opacity var(--image-change-speed),
+        scale var(--image-change-speed);
+}
+
+.film:is(:hover, :active) {
+    scale: 1.05;
     cursor: pointer;
+}
+
+.film__img {
+    height: 100%;
+    width: 100%;
+    transition: filter var(--image-change-speed) ease-out,
+        scale var(--image-change-speed);
+}
+
+.film:is(:hover, :active) > a .film__img {
+    filter: blur(2px);
+    scale: 1.02;
+}
+
+.film:is(:hover, :active) > a .film__title {
+    opacity: 1;
+    scale: 1.2;
 }

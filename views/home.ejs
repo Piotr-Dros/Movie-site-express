@@ -4,6 +4,8 @@
         <%- include('partials/head') %>
         <link rel="stylesheet" href="/stylesheets/home.css" />
         <title>Movie Page</title>
+
+        <script src="/javascript/homePage.js" defer></script>
     </head>
     <body>
         <% include('partials/navbar') %>
@@ -11,12 +13,14 @@
             <h1>Now Playing</h1>
             <div class="films-container">
                 <% data.forEach((movie) => { %>
-                <div class="film">
-                    <img
-                        src="<%= imageBaseUrl + movie.poster_path %>"
-                        alt="Title: <%= movie.title %>"
-                        class="film-img"
-                    />
+                <div class="film"">
+                    <a href="/movie/<%= movie.id %>">
+                        <img
+                            src="<%= imageBaseUrl + movie.poster_path %>"
+                            class="film__img"
+                        />
+                        <h3 class="film__title"><%= movie.title %></h3>
+                    </a>
                 </div>
                 <% }) %>
             </div>

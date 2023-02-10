@@ -1,8 +1,8 @@
 :root {
     --clr-base: #272640;
     --clr-secondary: #3e1f47;
-    --clr-front-bright: #006466;
-    --clr-front-dark: #144552;
+    --clr-front-bright: #f1f1f1;
+    --clr-front-dark: #bcbcbc;
 }
 
 *,
@@ -21,4 +21,16 @@ html {
 
 img {
     max-width: 100%;
+}
+
+@media all and (min-width: 700px) {
+    html {
+        font-size: 20px;
+    }
+}
+a {
+    text-decoration: none;
+}
+input:focus {
+    outline: none;
 }

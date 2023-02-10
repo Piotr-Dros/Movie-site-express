@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    color: var(--clr-front-dark);
+    margin: 3em 0;
+    font-size: 0.5rem;
+}
+
+footer > * {
+    display: block;
+    color: inherit;
+}

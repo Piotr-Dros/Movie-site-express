@@ -1,0 +1,108 @@
+body {
+    min-height: 100vh;
+    width: 100%;
+
+    background-color: var(--clr-base);
+}
+.main-page {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.film-cover-section {
+    color: white;
+
+    min-height: 450px;
+    width: 100%;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+
+    -webkit-box-shadow: inset 0px -20px 88px 27px rgba(0, 0, 0, 1);
+    -moz-box-shadow: inset 0px -20px 88px 27px rgba(0, 0, 0, 1);
+    box-shadow: inset 0px -20px 88px 27px rgba(0, 0, 0, 1);
+}
+.film-cover-section__info .tag-line {
+    color: hsl(0, 0%, 51%);
+    font-size: 0.8em;
+}
+.film-overview {
+    max-width: 700px;
+    padding: 1.2em 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+.film-overview__content {
+    position: relative;
+    font-size: 0.8rem;
+    color: hsl(0 0% 90%);
+}
+.film-overview__additional-info {
+    color: var(--clr-front-dark);
+    font-size: 0.8rem;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 0.3em 2em;
+}
+.film-overview__additional-info .info-content {
+    color: var(--clr-front-bright);
+}
+.info-item-company {
+    grid-column: 2 / 2;
+}
+.homepage-link {
+    --link-clr: hsl(30, 59%, 78%);
+    position: relative;
+    color: var(--link-clr);
+    transition: font-size 150ms;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+.homepage-link:hover {
+    font-size: 1.2em;
+}
+.homepage-link::after {
+    content: '';
+    position: absolute;
+    top: 105%;
+    left: 0;
+    background-color: var(--link-clr);
+    width: 0%;
+    height: 2px;
+    border-radius: 20px;
+
+    transition: width 300ms;
+}
+.homepage-link:hover::after {
+    width: 100%;
+}
+.line-after-element {
+    position: relative;
+}
+.line-after-element::after {
+    content: '';
+    position: absolute;
+    top: 115%;
+    left: 0;
+
+    width: 105%;
+    height: 1.5px;
+
+    border-radius: 20px;
+    background-color: rgb(74, 74, 74);
+}

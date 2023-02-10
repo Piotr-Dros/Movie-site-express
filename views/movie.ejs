@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head') %>
+        <link rel="stylesheet" href="/stylesheets/movie.css" />
+        <title><%= movie.title %></title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+        <main class="main-page">
+            <section
+                class="film-cover-section"
+                style="
+                    background-image: url('<%= imageBaseUrl %>/original<%= movie.backdrop_path %>');
+                "
+            >
+                <div class="film-cover-section__info">
+                    <h2 class="title"><%= movie.original_title %></h1>
+                    <h3 class="tag-line"><%= movie.tagline %></h2>
+                </div>
+            </section>
+            <section class="film-overview">
+                <div class="film-overview__content line-after-element">
+                    <%= movie.overview %>
+                </div>
+                <div class="film-overview__additional-info line-after-element">
+                    <span class="info-title">Budget</span>
+                    <span class="info-content"><%= movie.budget %></span>
+                    <span class="info-title">Revenue</span>
+                    <span class="info-content"><%= movie.revenue %></span>
+                    <span class="info-title">Realse Data</span>
+                    <span class="info-content"><%= movie.release_date %></span>
+                    <span class="info-title">Production Companies: </span>
+                    <% movie.production_companies.forEach(company => { %>
+                        <span class="info-content info-item-company"><%= company.name %></span>
+                    <% }) %>
+                </div>
+                <a href="<%= movie.homepage %>" class="homepage-link" target="_blank">Homepage</a>
+            </section>
+        </main>
+        <%- include('partials/footer') %>
+    </body>
+</html>

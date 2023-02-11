@@ -24,3 +24,14 @@ export async function getCurrentPlayedMovies() {
     const data = await response.json();
     return data;
 }
+
+export async function searchFilms(searchTerm) {
+    const searchMoviesUrl = `${apiBaseUrl}/search/movie?query=${searchTerm}&api_key=${apiKey}`;
+    const response = await fetch(searchMoviesUrl, { method: 'GET' }).catch(
+        (error) => {
+            console.log(error);
+        }
+    );
+    const data = await response.json();
+    return data;
+}

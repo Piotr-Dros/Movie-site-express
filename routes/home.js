@@ -4,6 +4,7 @@ import { apiKey } from '../config.js';
 import {
     getCurrentPlayedMovies,
     getFilmById,
+    searchFilms,
 } from '../models/fetch-data.models.js';
 
 const imageBaseUrl = 'http://image.tmdb.org/t/p';
@@ -32,6 +33,13 @@ router.get('/movie/:id', (req, res) => {
     });
 });
 
-router.post('/movie/:id/rating', (req, res) => {});
+router.post('/search', (req, res) => {
+    const userSearch = encodeURI(req.body.movieSearch);
+    searchFilms(userSearch).then((data) => {
+        res.render('home', {
+            data: data.results,
+        });
+    });
+});
 
 export default router;

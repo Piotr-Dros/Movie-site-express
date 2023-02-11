@@ -36,7 +36,7 @@ body {
 }
 .film-overview {
     max-width: 700px;
-    padding: 1.2em 0;
+    padding: 1.2em 0.8em;
 
     display: flex;
     flex-direction: column;
@@ -90,19 +90,4 @@ body {
 }
 .homepage-link:hover::after {
     width: 100%;
-}
-.line-after-element {
-    position: relative;
-}
-.line-after-element::after {
-    content: '';
-    position: absolute;
-    top: 115%;
-    left: 0;
-
-    width: 105%;
-    height: 1.5px;
-
-    border-radius: 20px;
-    background-color: rgb(74, 74, 74);
 }
